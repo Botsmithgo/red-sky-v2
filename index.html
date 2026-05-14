@@ -1835,6 +1835,16 @@ function setActiveProfile(letter){
     return `<div class="rank-row${lead}" data-code="${r.code}"><div class="rk">${i===0?"★":"#"+(i+1)}</div><div class="code">${r.code}</div><div class="why">${escapeHtml(r.why)}</div><div class="score">${escapeHtml(d?d.ceiling:"")}</div></div>`;
   }).join("");
   out.innerHTML=`<h4>Profile ${profile.letter} · <span class="serif" style="font-style:italic; font-weight:400; color:var(--text-2)">${escapeHtml(profile.name)}</span></h4><p style="color:var(--text-2); font-size:13.5px; line-height:1.55; max-width:60ch;">${escapeHtml(profile.desc)}</p><p style="color:var(--muted); font-size:12px; line-height:1.5; max-width:60ch; margin-top:8px; font-family:var(--mono);">Weights → ${escapeHtml(profile.weights)}</p><div class="ranking">${rows}</div>`;
+  // Pre-select the comparables filter for the profile's lead direction.
+  // Hybrids map to the half whose comparables are most relevant:
+  //   D5a (D1+D2) → D1 (the external workflow product)
+  //   D5b (D2→D3) → D2 (the first 5 years of the sequence)
+  //   B0  (baseline) → "all"
+  const leadCode = profile.ranking[0].code;
+  const filterMap = { D1:"D1", D2:"D2", D3:"D3", D4:"D4", D5a:"D1", D5b:"D2", B0:"all" };
+  const filterKey = filterMap[leadCode] || "all";
+  const filterBtn = document.querySelector(`#comp-filters button[data-filter="${filterKey}"]`);
+  if (filterBtn) filterBtn.click();
 }
 
 function renderRisks(){
