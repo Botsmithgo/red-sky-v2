@@ -1,9 +1,19 @@
-# Red Sky v2 — Product, Market & Financial Architecture
+# Red Sky v2 — Product, Market &amp; Financial Architecture
 
-Interactive single-page brief on the four product visions for an experiential entertainment credit platform. Strips operational and political content; focuses on product, market, financials, and exit pathways.
+Interactive single-page brief on four product visions for an experiential entertainment credit platform. Strips operational and political content; focuses on product, market, financials, and exit pathways.
 
-**Live:** https://botsmithgo.github.io/red-sky-v2/
+**Live URLs (both work):**
+- Clean: https://botsmithgo.github.io/red-sky-v2/ (auto-redirects)
+- Descriptive: https://botsmithgo.github.io/red-sky-v2/red-sky-v2-product-market-financials.html
 
-Dark-mode-first, no build step, vanilla HTML/CSS/JS. Open `index.html` to view locally.
+## Files
+| File | Purpose |
+|---|---|
+| `red-sky-v2-product-market-financials.html` | The actual brief — open in a browser, no build step |
+| `index.html` | Tiny redirect so the bare URL `botsmithgo.github.io/red-sky-v2/` still works |
 
-Companion to v1: https://botsmithgo.github.io/red-sky-brief/
+Dark-mode-first, vanilla HTML/CSS/JS, fonts via Google Fonts CDN.
+
+## Companion versions
+- v1 (decision tool): https://botsmithgo.github.io/red-sky-brief/
+- v3 (fresh-reader market thesis): https://botsmithgo.github.io/red-sky-v3/
